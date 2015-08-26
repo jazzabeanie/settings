@@ -1,7 +1,7 @@
 # settings
 This repository contains the setting I like to use for terminal, bash, etc.
 
-27/08/2015: When I tried to push to GitHub using "git push", I enocuntered the following message:
+27/08/2015 09:35: When I tried to push to GitHub using "git push", I enocuntered the following message:
 ============
 warning: push.default is unset; its implicit value has changed in
 Git 2.0 from 'matching' to 'simple'. To squelch this message
@@ -31,3 +31,5 @@ To push the current branch and set the remote as upstream, use
 ===================
 
 I'm not actually sure if this has worked or not, so I'm going to commit this change, "git push" and then check GitHub to see if it has.
+
+27/08/2015 09:40: It didn't work, so now I will follow the instructions with the command "git config --global push.default simple", and try again.
