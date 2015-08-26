@@ -1,0 +1,25 @@
+# vim: set filetype=sh : #
+# the above code is a modeline so that vim knows how to format the colours. See here for mmore information: http://vimdoc.sourceforge.net/htmldoc/options.html#modeline
+
+# the commands in this file are some of my favorite settings for the "~/.bash_profile" file.
+
+# this changes the PS1 variable, which controls the way that the prompt works in terminal. \e[32;40m changes the colour, \h displays the host, \u displays the user, \w displays the path, \n is newline, \$ shows ¿if sudo or not?, and e[0m turns it back to black and white"
+# why is it not /$???????, when I changed it, it didn't store it properly.
+export PS1="\e[32;40mServer:\h User:\u Path:\w\n$\e[0m"
+# the answer to the above question is that /$ is an escape character. Solve
+# this by either using //$, or using '' instead of "".
+# Also, I like this one a lot:
+PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ '
+# for some reason, with the above settings, instead of displaying like normal,
+# the comand prompt will overwrite the same line. I solve this by useing
+PS1='\e[33;1m\u@\h: \e[31m\w\e[0m\n\$'
+
+# The following code replaces cd with cd then ls -lah. I found it here: https://askubuntu.com/questions/16106/how-can-i-create-an-alias-for-cd-and-ls 
+function cd() {
+    	new_directory="$*";
+    	if [ $# -eq 0 ]; then 
+		new_directory=${HOME};
+	fi;
+	builtin cd "${new_directory}" && ls -lah
+}
+
