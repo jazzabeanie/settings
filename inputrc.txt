@@ -1,0 +1,5 @@
+TAB: menu-complete
+set completion-ignore-case On
+set completion-ignore-case On
+set show-all-if-ambiguous on
+# this above line doesn't seem to work, not sure why.
